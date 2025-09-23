@@ -27,36 +27,28 @@ export const siteConfig = {
   ],
   navMenuItems: [
     {
-      label: "Profile",
-      href: "/profile",
+      label: "چوبینو!",
+      href: "/",
     },
     {
-      label: "Dashboard",
-      href: "/dashboard",
+      label: "فروشگاه",
+      href: "/shop",
     },
     {
-      label: "Projects",
-      href: "/projects",
+      label: "محصولات",
+      href: "/product",
     },
     {
-      label: "Team",
-      href: "/team",
+      label: "وبلاگ",
+      href: "/blog",
     },
     {
-      label: "Calendar",
-      href: "/calendar",
+      label: "درباره ما",
+      href: "/about",
     },
     {
-      label: "Settings",
-      href: "/settings",
-    },
-    {
-      label: "Help & Feedback",
-      href: "/help-feedback",
-    },
-    {
-      label: "Logout",
-      href: "/logout",
+      label: "ارتباط باما",
+      href: "/call",
     },
   ],
   links: {

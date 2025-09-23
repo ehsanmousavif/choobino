@@ -6,8 +6,9 @@ import clsx from "clsx";
 import { Providers } from "./providers";
 
 import { siteConfig } from "@/config/site";
-import { fontSans } from "@/config/fonts";
-import { Navbar } from "@/components/navbar";
+import { fontSans, fontVazir } from "@/config/fonts";
+// import { Navbar } from "@/components/navbar";
+import Header from "@/components/header";
 
 export const metadata: Metadata = {
   title: {
@@ -33,18 +34,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html suppressHydrationWarning lang="en">
+    <html suppressHydrationWarning lang="en" className={fontVazir.variable}>
       <head />
       <body
         className={clsx(
-          "min-h-screen text-foreground bg-background font-sans antialiased",
-          fontSans.variable,
+          "min-h-screen text-foreground antialiased bg-white font-vazir"
         )}
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-          <div className="relative flex flex-col h-screen">
-            <Navbar />
-            <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
+          <div className=" w-full relative flex flex-col h-screen">
+            <Header />
+            <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow  ">
               {children}
             </main>
             <footer className="w-full flex items-center justify-center py-3">

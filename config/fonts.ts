@@ -1,3 +1,4 @@
+import localFont from "next/font/local";
 import { Fira_Code as FontMono, Inter as FontSans } from "next/font/google";
 
 export const fontSans = FontSans({
@@ -8,4 +9,9 @@ export const fontSans = FontSans({
 export const fontMono = FontMono({
   subsets: ["latin"],
   variable: "--font-mono",
+});
+export const fontVazir = localFont({
+  src: "./fonts/Vazir-Bold.ttf",
+  variable: "--font-vazir",
+  display: "swap",
 });
