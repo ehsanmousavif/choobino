@@ -1,13 +1,14 @@
-import "../styles/globals.css";
 import { Metadata, Viewport } from "next";
 import { Link } from "@heroui/link";
-import clsx from "clsx";
 
 import { Providers } from "./providers";
 
 import { siteConfig } from "@/config/site";
-import { fontVazir } from "@/config/fonts";
 import Header from "@/components/header";
+
+import "@/styles/globals.css";
+import { cn } from "@heroui/theme";
+import { fontSans } from "@/config/fonts";
 
 export const metadata: Metadata = {
   title: {
@@ -33,20 +34,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html suppressHydrationWarning lang="en" className={fontVazir.variable}>
+    <html suppressHydrationWarning lang="fa-IR" dir="rtl">
       <head />
       <body
-        className={clsx(
-          "md:px-8 min-h-screen  antialiased bg-foreground font-vazir "
+        className={cn(
+          "md:px-8 min-h-screen antialiased bg-background font-sans",
+          fontSans.variable
         )}
       >
-        <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-          <div
-            className="m-auto relative flex flex-col
-           h-screen"
-          >
+        <Providers
+          themeProps={{
+            attribute: "class",
+            forcedTheme: "light",
+          }}
+        >
+          <div className="relative flex flex-col h-screen container mx-auto px-6">
             <Header />
-            <main className=" container mx-auto flex-grow  ">{children}</main>
+
+            <main className="flex-grow">{children}</main>
+
             <footer className="w-full flex items-center justify-center py-3">
               <Link
                 isExternal
