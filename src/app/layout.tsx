@@ -1,14 +1,12 @@
 import { Metadata, Viewport } from "next";
-import { Link } from "@heroui/link";
+import { cn } from "@heroui/theme";
 
-import { Providers } from "./providers";
-
+import { Providers } from "@/app/providers";
 import { siteConfig } from "@/config/site";
-import Header from "@/components/header";
+import Header from "@/components/layout/header";
+import { fontMono, fontSans } from "@/config/fonts";
 
 import "@/styles/globals.css";
-import { cn } from "@heroui/theme";
-import { fontSans } from "@/config/fonts";
 
 export const metadata: Metadata = {
   title: {
@@ -39,7 +37,8 @@ export default function RootLayout({
       <body
         className={cn(
           "md:px-8 min-h-screen antialiased bg-background font-sans",
-          fontSans.variable
+          fontSans.variable,
+          fontMono.variable
         )}
       >
         <Providers
@@ -52,18 +51,6 @@ export default function RootLayout({
             <Header />
 
             <main className="flex-grow">{children}</main>
-
-            <footer className="w-full flex items-center justify-center py-3">
-              <Link
-                isExternal
-                className="flex items-center gap-1 text-current"
-                href="https://heroui.com?utm_source=next-app-template"
-                title="heroui.com homepage"
-              >
-                <span className="text-default-600">Powered by</span>
-                <p className="text-primary">ehsan</p>
-              </Link>
-            </footer>
           </div>
         </Providers>
       </body>

@@ -2,25 +2,29 @@
 
 import Link from "next/link";
 import React from "react";
-import { Button, Input } from "@heroui/react";
+import { Button, Input, Skeleton } from "@heroui/react";
 import {
   FingerPrintIcon,
   ShoppingBagIcon,
   MagnifyingGlassIcon,
 } from "@heroicons/react/24/outline";
-import Logo from "@/public/logo.png";
+import Logo from "$/logo.png";
 
-import MenuMobile from "./drawer";
 import Image from "next/image";
+import dynamic from "next/dynamic";
+
+const MobileDrawer = dynamic(() => import("./drawer"), {
+  ssr: false,
+  loading: () => <Skeleton className="size-12 rounded-full" />,
+});
 
 export default function Header() {
   return (
-    <header className="w-full flex flex-col items-center justify-between px-4 pt-10">
+    <header className="w-full flex flex-col items-center justify-between py-6 px-2 md:pt-12">
       <div className="w-full flex items-center justify-between py-2">
         <div className="flex items-center max-w-md">
-          <div className="mx-0 md:hidden">
-            <MenuMobile />
-          </div>
+          <MobileDrawer className="md:hidden" />
+
           <Input
             placeholder="دنبال محصول خاصی میگردی؟"
             variant="underlined"
