@@ -8,8 +8,6 @@ export default function Home() {
       <Banner />
       <div className="hidden md:block">
         <Benefits />
-        <Benefits />
-        <Benefits />
       </div>
     </section>
   );
