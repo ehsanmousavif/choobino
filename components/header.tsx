@@ -6,6 +6,7 @@ import { Input } from "@heroui/input";
 import { Logo, SearchIcon } from "./icons";
 import { Icon } from "@/config/icons/icons";
 import { usePathname } from "next/navigation";
+import MenuMobile from "./drawer";
 
 export default function Header() {
   const pathName = usePathname();
@@ -27,9 +28,9 @@ export default function Header() {
   );
 
   return (
-    <header className="w-full flex flex-col items-center text-black">
-      <div className="w-full flex items-center justify-between px-8 py-2">
-        <div className="flex items-center gap-8">
+    <header className="w-full flex flex-col items-center justify-between px-4">
+      <div className="w-full flex items-center justify-between py-2">
+        <div className=" hidden md:flex items-center gap-8 ">
           <Link href="/login" className="text-[12px] flex items-center">
             وارد شوید
             {Icon.finger}
@@ -42,19 +43,24 @@ export default function Header() {
           <Logo />
         </Link>
 
-        <div className="flex items-center max-w-md">{searchInput}</div>
+        <div className="flex items-center max-w-md">
+          <div className="  mx-0 none md:hidden">
+            <MenuMobile />
+          </div>
+          <div className="hidden md:flex">{searchInput}</div>
+        </div>
       </div>
 
-      <div className="w-full ">
-        <ul className="flex flex-row-reverse justify-center items-center gap-10 mt-6 text-[12px]">
+      <div className="w-full">
+        <ul className=" hidden md:flex flex-row-reverse justify-center items-center gap-10 mt-6 text-[12px] ">
           {siteConfig.navMenuItems.map((item, index) => (
             <li
               key={index}
               className={`${
                 item.href === "/" && removeSlash === ""
-                  ? "text-black"
+                  ? "text-default-50"
                   : item.href === `/${removeSlash}`
-                    ? "text-black"
+                    ? "text-default-50"
                     : "text-default-600"
               }`}
             >
