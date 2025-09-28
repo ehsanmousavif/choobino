@@ -8,6 +8,7 @@ import { fontMono, fontSans } from "@/config/fonts";
 
 import "@/styles/globals.css";
 
+  
 export const metadata: Metadata = {
   title: {
     default: siteConfig.name,
