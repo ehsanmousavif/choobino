@@ -44,12 +44,12 @@ function BenefitCard({ title, description, Icon }: BenefitTypes) {
   return (
     <div className="flex flex-col items-start gap-4 p-4">
       <div className="w-fit h-fit bg-secondary-500/10 p-5 text-secondary-400 rounded-full">
-        <Icon className="size-10" aria-label={title} />
+        <Icon className="h-10 w-10" aria-label={title} />
       </div>
       <div className="flex flex-col gap-2 items-start">
-        <span className="text-xl text-secondary mt-6">-</span>
+        <div className="w-3 h-0.5 bg-secondary mt-6"></div>
 
-        <span className="text-xl font-bold">{title}</span>
+        <h3 className="text-xl font-bold">{title}</h3>
         <p className="text-sm text-foreground-800 font-light line-clamp-3">
           {description}
         </p>
@@ -62,8 +62,8 @@ export default function Benefits() {
   return (
     <section className="w-full py-16">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {Object.values(BENEFIT_TEXTS).map((benefit) => (
-          <BenefitCard key={benefit.title} {...benefit} />
+        {Object.values(BENEFIT_TEXTS).map((benefit, index) => (
+          <BenefitCard key={index} {...benefit} />
         ))}
       </div>
     </section>
