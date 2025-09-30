@@ -118,7 +118,7 @@ const BlogCard = ({ blog }: { blog: BlogType & { number: number } }) => {
         </div>
       </div>
 
-      <div className="w-full text-sm md:text-lg lg:text-2xl font-medium">
+      <div className="w-full text-sm md:text-lg lg:text-2xl font-">
         {blog.number}.{blog.title}
       </div>
     </Link>
