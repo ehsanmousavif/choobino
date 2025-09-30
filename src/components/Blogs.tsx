@@ -98,7 +98,7 @@ const BlogCard = ({ blog }: { blog: BlogType }) => {
   return (
     <Link
       href={blog.link}
-      className="flex-[0_0_70%] flex flex-col gap-8 mx-2 md:basis-[calc(100%/2)] lg:basis-[calc(100%/4-16px)]"
+      className="flex-[0_0_70%] flex flex-col gap-8 mx-2 md:flex-[0_0_50%] lg:flex-[0_0_25%] "
       draggable="false"
     >
       <Image
