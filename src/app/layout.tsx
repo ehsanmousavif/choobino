@@ -4,7 +4,6 @@ import { cn } from "@heroui/theme";
 import { Providers } from "@/app/providers";
 import { siteConfig } from "@/config/site";
 import Header from "@/components/layout/header";
-import Footer from "@/components/layout/footer";
 import { fontMono, fontSans } from "@/config/fonts";
 
 import "@/styles/globals.css";
@@ -48,16 +47,12 @@ export default function RootLayout({
             forcedTheme: "light",
           }}
         >
-
-
           <div className="relative flex flex-col h-screen containersw-full">
             <Header />
 
             <main className="flex-grow px-16">{children}</main>
-<div className="w-full"> <Footer/>
-</div>
+            <div className="w-full"></div>
           </div>
-       
         </Providers>
       </body>
     </html>

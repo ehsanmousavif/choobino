@@ -5,6 +5,8 @@ import { Button } from "@heroui/react";
 import Image from "next/image";
 import Link from "next/link";
 import useEmblaCarousel from "embla-carousel-react";
+import { useBlogProgressButton } from "@/app/hooks/useBlogProgressButton";
+import BlogProgressButton from "./blog-components/BlogProgressButton";
 
 interface BlogType {
   title: string;
@@ -57,34 +59,6 @@ const blogs: BlogType[] = [
     imageUrl: "/img2.png",
     link: "/blog/6",
   },
-  {
-    title: "بهینه‌سازی وبسایت برای موتورهای جستجو",
-    property: "سئو",
-    date: "۳۰ فروردین ۱۴۰۳",
-    imageUrl: "/img3.png",
-    link: "/blog/7",
-  },
-  {
-    title: "چگونه تیم خود را مدیریت کنیم",
-    property: "مدیریت",
-    date: "۵ اردیبهشت ۱۴۰۳",
-    imageUrl: "/img4.png",
-    link: "/blog/8",
-  },
-  {
-    title: "راهنمای جامع طراحی لوگو",
-    property: "گرافیک",
-    date: "۱۰ اردیبهشت ۱۴۰۳",
-    imageUrl: "/img1.png",
-    link: "/blog/9",
-  },
-  {
-    title: "استراتژی محتوا برای شبکه‌های اجتماعی",
-    property: "محتوا",
-    date: "۱۵ اردیبهشت ۱۴۰۳",
-    imageUrl: "/img2.png",
-    link: "/blog/10",
-  },
 ];
 
 const blogsWithNumber = blogs.map((b, i) => ({ ...b, number: i + 1 }));
@@ -109,11 +83,11 @@ const BlogCard = ({ blog }: { blog: BlogType & { number: number } }) => {
 
       <div className="flex justify-between items-center w-full text-gray-400 text-xs xl:text-sm 2xl:text-lg">
         <div className="flex items-center lg:gap-2">
-          <FolderIcon className="w-3 h-3 sm:w-4 sm:h-4 md:w-6 md:h-6"/>
+          <FolderIcon className="w-3 h-3 sm:w-4 sm:h-4 md:w-6 md:h-6" />
           <span>{blog.property}</span>
         </div>
         <div className="flex items-center gap-2">
-          <ClockIcon className="w-3 h-3 sm:w-4 sm:h-4 md:w-6 md:h-6"/>
+          <ClockIcon className="w-3 h-3 sm:w-4 sm:h-4 md:w-6 md:h-6" />
           <span>{blog.date}</span>
         </div>
       </div>
@@ -126,13 +100,15 @@ const BlogCard = ({ blog }: { blog: BlogType & { number: number } }) => {
 };
 
 const Blogs = () => {
-  const [emblaRef] = useEmblaCarousel({
+  const [emblaRef, emblaApi] = useEmblaCarousel({
     containScroll: "trimSnaps",
     direction: "rtl",
     slidesToScroll: "auto",
     loop: true,
     align: "center",
   });
+
+  const { selectedIndex, scrollSnaps } = useBlogProgressButton(emblaApi);
 
   return (
     <section className="rounded-3xl w-full flex flex-col relative gap-12 my-60">
@@ -151,6 +127,17 @@ const Blogs = () => {
             <BlogCard blog={blog} key={blog.link} />
           ))}
         </div>
+      </div>
+
+      <div className="flex flex-wrap justify-center gap-2 items-center mx-auto w-full">
+        {scrollSnaps.map((_, i) => (
+          <BlogProgressButton
+            key={i}
+            className={`flex-1 h-0.5 transition-background md:hidden ${
+              i === selectedIndex ? "bg-[#B7B7B7]" : "bg-[#F5F5F5]"
+            }`}
+          />
+        ))}
       </div>
 
       <Button
