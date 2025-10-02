@@ -1,11 +1,16 @@
-const IntagramIcon = () => {
+import React from "react";
+interface InstagramIconProps {
+  size: number;
+  color: string;
+}
+const IntagramIcon: React.FC<InstagramIconProps> = ({ size, color }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={24}
-      height={24}
+      width={size}
+      height={size}
       viewBox="0 0 24 24"
-      className="size-10 text-secondary-500"
+      className={`text-${color}`}
     >
       <path
         fill="currentColor"
@@ -15,4 +20,4 @@ const IntagramIcon = () => {
   );
 };
 
-export default IntagramIcon;
+export default React.memo(IntagramIcon);

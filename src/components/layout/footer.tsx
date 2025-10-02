@@ -76,15 +76,19 @@ const Footer = () => {
               سنتی و سبک مدرن را به نمایش می‌گذارد.
             </span>
           </div>
-          
+
           <div className="flex gap-5 flex-col w-1/4">
             <b className="text-2xl items-center flex gap-5 text-white w-full justify-between">
               <span>درباره ما</span>
               <InformationCircleIcon className="size-10 text-secondary-500" />
             </b>
             <ul className="text-[#A7A7A7] flex flex-col gap-2.5 text-lg font-bold">
-              <li><Link href="/about">درباره ما</Link></li>
-              <li><Link href="/jobs">فرصت‌های شغلی</Link></li>
+              <li>
+                <Link href="/about">درباره ما</Link>
+              </li>
+              <li>
+                <Link href="/jobs">فرصت‌های شغلی</Link>
+              </li>
             </ul>
           </div>
 
@@ -121,8 +125,8 @@ const Footer = () => {
           </div>
           <div className="flex gap-5 flex-col max-w-1/4">
             <div className="flex items-center gap-2.5">
-              <TelegramIcon />
-              <IntagramIcon />
+              <TelegramIcon size={10} color="secondary-500" />
+              <IntagramIcon size={10} color="secondary-500" />
             </div>
             <b className="text-lg text-white">
               پالیز کمپانی را در شبکه های اجتماعی دنبال کنید
