@@ -14,7 +14,7 @@ import IntagramIcon from "../icons/InstagramIcon";
 
 const Footer = () => {
   return (
-    <footer className="w-full flex flex-col font-sans">
+    <footer className="w-full flex flex-col">
       <div className="relative h-80 w-full">
         <Image
           src="/images/footer-image.jpg"
@@ -26,7 +26,6 @@ const Footer = () => {
 
       <div className="flex flex-col gap-20 px-10 md:px-32 py-20 pb-30 relative bg-foreground">
         <div className="absolute inset-0  bg-radial-[at_50%_30%] from-foreground via-foreground to-secondary-700 opacity-60 z-10" />
-        {/* <div className="absolute inset-0 bg-gradient-to-tl from-secondary-700 via-foreground to-foreground z-10" /> */}
 
         <div className="flex justify-between gap-5 z-20 max-md:flex-col text-center md:text-start">
           <div className="flex gap-5 flex-col flex-1/2 max-md:flex-1">
