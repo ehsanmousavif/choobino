@@ -1,120 +1,95 @@
 "use client";
-
 import { cn } from "@heroui/theme";
-import React, { useEffect, useState } from "react";
+import Image from "next/image";
+import React, { useEffect, useRef } from "react";
 
-export const CommentsCarosel = ({
-  items,
-  direction = "left",
-  speed = "fast",
-  pauseOnHover = true,
-  className,
-}: {
-  items: {
-    quote: string;
-    name: string;
-    title: string;
-    profileUrl: string;
-    identity: string;
-  }[];
-  direction?: "left" | "right";
-  speed?: "fast" | "normal" | "slow";
-  pauseOnHover?: boolean;
+type commentsType = {
+  quote: string;
+  name: string;
+  title: string;
+  profileUrl: string;
+  identity: string;
+};
+
+interface CommentsCaroselProps {
+  comments: commentsType[];
+  direction: "left" | "right";
   className?: string;
+}
+
+const CommentsCarosel: React.FC<CommentsCaroselProps> = ({
+  direction,
+  className,
+  comments,
 }) => {
-  const containerRef = React.useRef<HTMLDivElement>(null);
-  const scrollerRef = React.useRef<HTMLUListElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const scrollerRef = useRef<HTMLDivElement>(null);
+
+  async function addAnimation() {
+    if (scrollerRef.current && containerRef.current) {
+      const items = Array.from(scrollerRef.current.children);
+      items.forEach((i) => {
+        const clone = i.cloneNode(true);
+        scrollerRef.current?.appendChild(clone);
+      });
+    }
+    getDirection();
+  }
+
+  const getDirection = () => {
+    if (containerRef.current) {
+      containerRef.current.style.setProperty(
+        "--scroll-amount",
+        direction === "left" ? "-50%" : "50%"
+      );
+    }
+  };
 
   useEffect(() => {
     addAnimation();
   }, []);
-  const [start, setStart] = useState(false);
-  function addAnimation() {
-    if (containerRef.current && scrollerRef.current) {
-      const scrollerContent = Array.from(scrollerRef.current.children);
 
-      scrollerContent.forEach((item) => {
-        const duplicatedItem = item.cloneNode(true);
-        if (scrollerRef.current) {
-          scrollerRef.current.appendChild(duplicatedItem);
-        }
-      });
-
-      getDirection();
-      getSpeed();
-      setStart(true);
-    }
-  }
-  const getDirection = () => {
-    if (containerRef.current) {
-      if (direction === "left") {
-        containerRef.current.style.setProperty(
-          "--animation-direction",
-          "forwards"
-        );
-      } else {
-        containerRef.current.style.setProperty(
-          "--animation-direction",
-          "reverse"
-        );
-      }
-    }
-  };
-  const getSpeed = () => {
-    if (containerRef.current) {
-      if (speed === "fast") {
-        containerRef.current.style.setProperty("--animation-duration", "10s");
-      } else if (speed === "normal") {
-        containerRef.current.style.setProperty("--animation-duration", "30s");
-      } else {
-        containerRef.current.style.setProperty("--animation-duration", "50s");
-      }
-    }
-  };
   return (
     <div
       ref={containerRef}
       className={cn(
-        "scroller relative z-20 max-w-7xl overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
-        className
+        "overflow-hidden relative z-20 flex comments-carosel-container py-2",
+        className,
+        direction === "left" ? "flex-row-reverse" : "flex-row"
       )}
     >
-      <ul
+      <div
         ref={scrollerRef}
-        className={cn(
-          "flex w-max min-w-full shrink-0 flex-nowrap gap-4 py-4",
-          start && "animate-scroll",
-          pauseOnHover && "hover:[animation-play-state:paused]"
-        )}
+        className="flex w-max min-w-full shrink-0 flex-nowrap gap-8 py-2 comments-carosel"
       >
-        {items.map((item, idx) => (
-          <li
-            className="relative w-[350px] max-w-full shrink-0 rounded-2xl bg-[linear-gradient(180deg,#fafafa,#f5f5f5)] px-8 py-6 md:w-[450px]"
-            key={item.name}
+        {comments.map((i, idx) => (
+          <div
+            className="w-120 flex flex-col justify-between gap-4 rounded-2xl py-4 md:py-8 px-5 md:px-10 shrink-0 bg-content2 "
+            key={idx}
           >
-            {}
-            <blockquote>
-              <div
-                aria-hidden="true"
-                className="user-select-none pointer-events-none absolute -top-0.5 -left-0.5 -z-1 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
-              ></div>
-              <span className="relative z-20 text-sm leading-[1.6] font-normal text-neutral-800 dark:text-gray-100">
-                {item.quote}
-              </span>
-              <div className="relative z-20 mt-6 flex flex-row items-center">
-                <span className="flex flex-col gap-1">
-                  <span className="text-sm leading-[1.6] font-normal text-neutral-500 dark:text-gray-400">
-                    {item.name}
-                  </span>
-                  <span className="text-sm leading-[1.6] font-normal text-neutral-500 dark:text-gray-400">
-                    {item.title}
-                  </span>
-                </span>
+            <span className="text-7xl text-danger-900">;;</span>
+            <b className="text-2xl">{i.title}</b>
+            <span className="text-lg flex-1">{i.quote}</span>
+            <span className="text-5xl text-danger-900">-</span>
+
+            <div className="flex items-center gap-6">
+              <Image
+                src={i.profileUrl}
+                height={63}
+                width={63}
+                alt={i.name}
+                className="object-cover rounded-full"
+              />
+              <div className="flex flex-col">
+                <b className="text-lg">{i.name}</b>
+                <span>{i.identity}</span>
               </div>
-            </blockquote>
-          </li>
+            </div>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };
+
+export default CommentsCarosel;

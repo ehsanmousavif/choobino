@@ -1,5 +1,5 @@
-import { CommentsCarosel } from "./CommentsCarosel";
-import CommentsCaroselV2 from "./CommentsCaroselV2";
+import Image from "next/image";
+import CommentsCarosel from "./CommentsCarosel";
 import CommentsHeader from "./CommentsHeader";
 
 const comments = [
@@ -78,16 +78,21 @@ const comments = [
 
 const Comments = () => {
   return (
-    <section className="flex flex-col py-32">
+    <section className="flex flex-col py-32 gap-28">
       <CommentsHeader />
-      {/* <CommentsCarosel
-        className="w-full max-w-none"
-        items={comments}
-        direction="left"
-        pauseOnHover
-      /> */}
-      <CommentsCaroselV2 comments={comments} direction="right" />
-      {/* <CommentsCarosel items={comments} direction="right" pauseOnHover /> */}
+      <div className="flex flex-col">
+        <CommentsCarosel comments={comments} direction="right" />
+        <CommentsCarosel comments={comments} direction="left" />
+        <div className="flex justify-end">
+          <Image
+            src={"/images/635fd0a699c1c847bf2834e084409a65e49ab8b1.png"}
+            height={232}
+            width={232}
+            alt="header comments image"
+            className="object-cover -rotate-15 grayscale max-md:hidden"
+          />
+        </div>
+      </div>
     </section>
   );
 };

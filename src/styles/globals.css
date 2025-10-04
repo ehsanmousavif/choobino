@@ -2,18 +2,16 @@
 @config "../../tailwind.config.js";
 
 @theme comments-carosel {
-  --animate-scroll: carouselAnimation var(--animation-direction, forwards)
-    linear infinite 0.2s;
   @keyframes carouselAnimation {
-    0% {
-      transform: translateX(0);
-    }
     100% {
-      transform: translateX(calc(-1 * var(--scroll-width)));
+      transform: translateX(var(--scroll-amount));
     }
   }
 }
 .comments-carosel {
-  display: flex;
   animation: carouselAnimation 100s linear infinite;
+}
+.comments-carosel-container:hover .comments-carosel {
+  animation-play-state: paused;
+  cursor: pointer;
 }
