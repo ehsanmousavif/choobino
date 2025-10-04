@@ -67,7 +67,7 @@ const BlogCard = ({ blog }: { blog: BlogType & { number: number } }) => {
   return (
     <Link
       href={blog.link}
-      className="flex-[0_0_70%] flex flex-col gap-8 mx-2 md:flex-[0_0_50%] lg:flex-[0_0_25%]"
+      className="flex-[0_0_70%] flex flex-col gap-8 mx-2 md:flex-[0_0_calc(50%-16px)] lg:flex-[0_0_calc(25%-16px)]"
       draggable="false"
     >
       <div className="relative">
@@ -105,7 +105,14 @@ const Blogs = () => {
     direction: "rtl",
     slidesToScroll: "auto",
     loop: true,
-    align: "center",
+    breakpoints: {
+      "(max-width: 767px)": {
+        align: "center",
+      },
+      "(min-width: 768px)": {
+        align: "start",
+      },
+    },
   });
 
   const { selectedIndex, scrollSnaps } = useBlogProgressButton(emblaApi);
@@ -116,7 +123,8 @@ const Blogs = () => {
         <h2 className="text-2xl max-md:m-auto md:text-4xl">مقالات اخیر</h2>
         <Button
           variant="bordered"
-          className="w-auto bg-foreground text-background py-6 px-2 md:px-6 max-md:hidden lg:px-8">
+          className="w-auto bg-foreground text-background py-6 px-2 md:px-6 max-md:hidden lg:px-8"
+        >
           مشاهده همه مقالات
         </Button>
       </div>
@@ -142,7 +150,8 @@ const Blogs = () => {
 
       <Button
         variant="bordered"
-        className="w-1/2 mx-auto bg-foreground text-background py-6 px-2 md:px-6 md:hidden lg:px-8">
+        className="w-1/2 mx-auto bg-foreground text-background py-6 px-2 md:px-6 md:hidden lg:px-8"
+      >
         مشاهده همه مقالات
       </Button>
     </section>
