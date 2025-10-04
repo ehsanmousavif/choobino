@@ -64,7 +64,7 @@ const CommentsCarosel: React.FC<CommentsCaroselProps> = ({
       >
         {comments.map((i, idx) => (
           <div
-            className="w-120 flex flex-col justify-between gap-4 rounded-2xl py-4 md:py-8 px-5 md:px-10 shrink-0 bg-content2 "
+            className="w-120 flex flex-col justify-between gap-4 rounded-2xl py-4 md:py-8 px-5 md:px-10 shrink-0 bg-content2"
             key={idx}
           >
             <span className="text-7xl text-danger-900">;;</span>
