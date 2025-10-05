@@ -74,6 +74,7 @@ const comments = [
     profileUrl: "/images/user1.jpg",
     identity: "تلگرام",
   },
+  
 ];
 
 const Comments = () => {
@@ -83,6 +84,7 @@ const Comments = () => {
       <div className="flex flex-col">
         <CommentsCarosel comments={comments} direction="right" />
         <CommentsCarosel comments={comments} direction="left" />
+
         <div className="flex justify-end">
           <Image
             src={"/images/635fd0a699c1c847bf2834e084409a65e49ab8b1.png"}

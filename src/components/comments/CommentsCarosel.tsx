@@ -25,7 +25,7 @@ const CommentsCarosel: React.FC<CommentsCaroselProps> = ({
   const containerRef = useRef<HTMLDivElement>(null);
   const scrollerRef = useRef<HTMLDivElement>(null);
 
-  async function addAnimation() {
+  function addAnimation() {
     if (scrollerRef.current && containerRef.current) {
       const items = Array.from(scrollerRef.current.children);
       items.forEach((i) => {
