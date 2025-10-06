@@ -1,14 +1,11 @@
 import Banner from "@/components/banner";
-import Benefits from "@/components/benefits";
+import TopSales from "@/components/top-sales";
 
 export default function Home() {
   return (
     <section className="w-full flex flex-col">
       <Banner />
-      <div className="hidden md:block w-full pt-6">
-        {" "}
-        <Benefits />
-      </div>
+      <TopSales />
     </section>
   );
 }

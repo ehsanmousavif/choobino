@@ -36,7 +36,7 @@ export default function RootLayout({
       <head />
       <body
         className={cn(
-          "md:px-8 min-h-screen antialiased bg-background font-sans",
+          "md:min-h-screen antialiased bg-background font-sans",
           fontSans.variable,
           fontMono.variable
         )}
@@ -47,9 +47,8 @@ export default function RootLayout({
             forcedTheme: "light",
           }}
         >
-          <div className="relative flex flex-col h-screen container mx-auto px-6">
+          <div className="relative flex flex-col h-screen container mx-auto px-4 md:px-16">
             <Header />
-
             <main className="flex-grow">{children}</main>
           </div>
         </Providers>
