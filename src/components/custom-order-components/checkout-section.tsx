@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import CheckoutHeader from "./CheckoutHeader";
+import CheckoutHeader from "./checkout-header";
 import { Button } from "@heroui/react";
 
 const CheckoutSection = () => {
@@ -18,27 +18,27 @@ const CheckoutSection = () => {
           <div className="w-12 h-12 rounded-full bg-secondary-400"></div>
           <b className="text-lg">خلاصه سفارش شما</b>
         </div>
-        <div className="flex items-center justify-between  md:gap-5 max-md:flex-col">
+        <div className="flex items-center justify-between gap-5 max-md:flex-col">
           <div className="flex flex-1/4 items-center border-l-solid border-l-1 border-l-content4 max-md:border-none justify-around max-md:w-full ">
             <span className="text-content4 font-bold">نوع محصول:</span>
             <span className="font-bold">{productType}</span>
           </div>
-          <span className="text-3xl text-content3 md:hidden">-</span>
+          <span className="bg-content3 w-4 h-0.5 md:hidden" />
           <div className="flex flex-1/4 items-center border-l-solid border-l-1 border-l-content4 max-md:border-none justify-around max-md:w-full ">
             <span className="text-content4 font-bold">ابعاد:</span>
             <span className="font-bold">{size}</span>
           </div>
-          <span className="text-3xl text-content3 md:hidden">-</span>
+          <span className="bg-content3 w-4 h-0.5 md:hidden" />
           <div className="flex flex-1/4 items-center border-l-solid border-l-1 border-l-content4 max-md:border-none justify-around max-md:w-full ">
             <span className="text-content4 font-bold"> جنسیت:</span>
             <span className="font-bold">{gender}</span>
           </div>
-          <span className="text-3xl text-content3 md:hidden">-</span>
+          <span className="bg-content3 w-4 h-0.5 md:hidden" />
           <div className="flex flex-1/4 items-center border-l-solid border-l-1 border-l-content4 max-md:border-none justify-around max-md:w-full ">
             <span className="text-content4 font-bold">قالب محصول :</span>
             <span className="font-bold">{shape}</span>
           </div>
-          <span className="text-3xl text-content3 md:hidden">-</span>
+          <span className="bg-content3 w-4 h-0.5 md:hidden" />
           <div className="flex flex-1/4 items-center justify-around max-md:w-full">
             <span className="text-content4 font-bold">هزینه بیعانه:</span>
             <span className="font-bold">{deposit.toLocaleString()} تومان</span>

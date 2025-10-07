@@ -9,8 +9,8 @@ import {
 import { Button } from "@heroui/react";
 import Image from "next/image";
 import Link from "next/link";
-import TelegramIcon from "../icons/TelegramIcon";
-import IntagramIcon from "../icons/InstagramIcon";
+import TelegramIcon from "../icons/telegram-icon";
+import IntagramIcon from "../icons/instagram-icon";
 
 const Footer = () => {
   return (

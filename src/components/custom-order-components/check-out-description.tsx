@@ -7,9 +7,9 @@ const CheckOutDescription = () => {
   return (
     <div className="flex flex-col gap-8">
       <b className="text-lg">توضیحات تکمیلی </b>
-      <label className="flex w-full h-60 rounded-2xl border-content3 border-solid border-1 gap-5 p-8 shadow max-md:flex-col">
+      <label className="flex w-full h-60 rounded-2xl border-content3 border-solid border-1 gap-2 md:gap-5 p-8 shadow max-md:flex-col">
         <span className="font-bold pt-1.5">چیزی هست که باید بدونیم ؟</span>
-        <div className="pt-0.5 text-content4 text-2xl max-md:hidden">|</div>
+        <div className="mt-2 bg-content4 w-0.5 h-6 max-md:hidden"/>
         <textarea
           placeholder="اینجا برامون بنویس"
           className="resize-none flex-1 outline-none border-none bg-none py-2"

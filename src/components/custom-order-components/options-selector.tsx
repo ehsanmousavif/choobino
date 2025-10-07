@@ -1,5 +1,5 @@
-import OptionsSelectorGender from "./OptionsSelectorGender";
-import OptionsSelectorSize from "./OptionsSelectorSize";
+import OptionsSelectorGender from "./options-selector-gender";
+import OptionsSelectorSize from "./options-selector-size";
 
 const OptionsSelector = () => {
   return (

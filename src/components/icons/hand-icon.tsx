@@ -2,15 +2,15 @@ import { cn } from "@heroui/theme";
 import { type FC, memo } from "react";
 
 interface HandIconProp {
-  color: string;
   size: string;
+  color?: string;
   className?: string;
 }
 const HandIcon: FC<HandIconProp> = ({ size, color, className }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className={cn(`text-${color} transition duration-300 ${size}`, className)}
+      className={cn(`transition duration-300 text-${color} ${size}`, className)}
       viewBox="0 0 512 512"
     >
       <path
@@ -22,3 +22,4 @@ const HandIcon: FC<HandIconProp> = ({ size, color, className }) => {
 };
 
 export default memo(HandIcon);
+  

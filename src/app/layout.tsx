@@ -50,8 +50,7 @@ export default function RootLayout({
         >
           <div className="relative flex flex-col h-screen containersw-full">
             <Header />
-
-            <main className="flex-grow px-16">{children}</main>
+            <main className="flex-grow px-6 md:px-16">{children}</main>
             <div className="w-full">
               <Footer/>
             </div>

@@ -1,11 +1,11 @@
-import CheckOutDescription from "@/components/custom-order-page/CheckOutDescription";
-import CheckOutImageInputSection from "@/components/custom-order-page/CheckOutImageInputSection";
-import CheckoutSection from "@/components/custom-order-page/CheckoutSection";
-import CustomOrderHeroSection from "@/components/custom-order-page/CustomOrderHeroSection";
-import CustomTextContent from "@/components/custom-order-page/CustomTextContent";
-import OptionsSelector from "@/components/custom-order-page/OptionsSelector";
-import ProductTemplateSelector from "@/components/custom-order-page/ProductTemplateSelector";
-import ProductTypeSelector from "@/components/custom-order-page/ProductTypeSelector";
+import CheckOutDescription from "@/components/custom-order-components/check-out-description";
+import CheckOutImageInputSection from "@/components/custom-order-components/check-out-image-input-section";
+import CheckoutSection from "@/components/custom-order-components/checkout-section";
+import CustomOrderHeroSection from "@/components/custom-order-components/custom-order-hero-section";
+import CustomTextContent from "@/components/custom-order-components/custom-text-content";
+import OptionsSelector from "@/components/custom-order-components/options-selector";
+import ProductTemplateSelector from "@/components/custom-order-components/product-shape-selector";
+import ProductTypeSelector from "@/components/custom-order-components/product-type-selector";
 
 const CustomOrderPage = () => {
   return (

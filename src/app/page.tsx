@@ -1,6 +1,6 @@
 import Banner from "@/components/banner";
 import Blogs from "@/components/Blogs";
-import Comments from "@/components/comments/Comments";
+import Comments from "@/components/comments-components/comments";
 
 export default function Home() {
   return (

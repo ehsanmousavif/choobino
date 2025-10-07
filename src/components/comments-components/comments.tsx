@@ -1,6 +1,6 @@
 import Image from "next/image";
-import CommentsCarosel from "./CommentsCarosel";
-import CommentsHeader from "./CommentsHeader";
+import CommentsCarosel from "./comments-carosel";
+import CommentsHeader from "./comments-header";
 
 const comments = [
   {

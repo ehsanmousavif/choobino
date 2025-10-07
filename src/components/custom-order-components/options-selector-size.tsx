@@ -15,7 +15,7 @@ const OptionsSelectorSize = () => {
         <span>ابعاد محصول</span>
         <span className="text-content4">|</span>
         <Select
-          className="flex-1 shadow-none cursor-pointer border-none outline-none bg-none"
+          className="flex-1 shadow-none cursor-pointer border-none outline-none bg-none font-sans"
           placeholder="یک گزینه انتخاب کنید"
         >
           {sizeOptions.map((s) => (
