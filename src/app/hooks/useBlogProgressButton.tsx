@@ -6,11 +6,12 @@ type UseProgressButtontonType = {
   scrollSnaps: number[];
 };
 
-export const useBlogProgressButton = (
+export function useBlogProgressButton(
   emblaApi: EmblaCarouselType | undefined
-): UseProgressButtontonType => {
-  const [selectedIndex, setSelectedIndex] = useState(0);
+): UseProgressButtontonType {
+  const [selectedIndex, setSelectedIndex] = useState<number>(0);
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
+
   const onInit = useCallback((emblaApi: EmblaCarouselType) => {
     const snaps = emblaApi.scrollSnapList();
     setScrollSnaps(snaps);
@@ -43,4 +44,4 @@ export const useBlogProgressButton = (
     selectedIndex,
     scrollSnaps,
   };
-};
+}

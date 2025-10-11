@@ -21,11 +21,11 @@ export default function ProductTypeSelectorItem({
           defaultChecked
         />
 
-        <span className="flex items-center justify-center w-12 h-12 md:w-22 md:h-22 rounded-full transition duration-300 bg-amber-50 group-has-[:checked]:bg-secondary-400">
+        <span className="flex items-center justify-center w-12 h-12 max-lg:max-w-17 max-lg:max-h-15 md:w-22 md:h-22 rounded-full transition duration-300 bg-amber-50 group-has-[:checked]:bg-secondary-400">
           {icon}
         </span>
 
-        <span className="max-md:text-sm font-bold transition duration-300 text-content4 group-has-[:checked]:text-content4-foreground">
+        <span className="max-md:text-sm font-bold transition duration-300 text-foreground/35 group-has-[:checked]:text-foreground">
           {title}
         </span>
       </label>

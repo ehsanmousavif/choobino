@@ -59,6 +59,7 @@ const ProductTypeSelectorItems: ProductTypeSelectorItemType[] = [
       />
     ),
   },
+
 ];
 
 export default function ProductTypeSelector() {
@@ -74,7 +75,7 @@ export default function ProductTypeSelector() {
 
       <div className="flex flex-col gap-5">
         <b className="text-lg">انتخاب نوع محصول</b>
-        <span className="text-content4">
+        <span className="text-foreground/45">
           یکی از گزینه های زیر رو انتخاب کن برات بسازیم
         </span>
       </div>
