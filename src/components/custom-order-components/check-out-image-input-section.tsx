@@ -1,7 +1,6 @@
 import CheckOutImageInput from "./check-out-image-input";
 
-const CheckOutImageInputSection = () => {
-
+export default function CheckOutImageInputSection() {
   return (
     <section className="py-15 gap-8 flex flex-col">
       <div className="flex flex-col gap-2.5">
@@ -10,10 +9,8 @@ const CheckOutImageInputSection = () => {
           اگر تصویر نمونه ای دارید برامون بفرستید :)
         </span>
       </div>
-     
+
       <CheckOutImageInput />
     </section>
   );
-};
-
-export default CheckOutImageInputSection;
+}

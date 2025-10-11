@@ -3,7 +3,8 @@ import React from "react";
 interface CheckCircleIconProp {
   size: string;
 }
-const CheckCircleIcon: React.FC<CheckCircleIconProp> = ({ size }) => {
+
+function CheckCircleIcon({ size }: CheckCircleIconProp) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -18,6 +19,6 @@ const CheckCircleIcon: React.FC<CheckCircleIconProp> = ({ size }) => {
       />
     </svg>
   );
-};
+}
 
 export default React.memo(CheckCircleIcon);

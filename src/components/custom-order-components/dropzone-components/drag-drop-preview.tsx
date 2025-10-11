@@ -22,7 +22,7 @@ export default function DragDropAndPreview({
     const newFiles: PreviewFile[] = batch.items
       .map((item) => {
         const file = item.file as File;
-        if (file.size > 10 * 1024 * 1024) return null; 
+        if (file.size > 10 * 1024 * 1024) return null;
         return {
           id: item.id,
           name: file.name,
@@ -48,14 +48,12 @@ export default function DragDropAndPreview({
 
   return (
     <div className="flex flex-col gap-4 relative h-auto">
-      <UploadDropZone
-        className="flex w-full h-60 rounded-2xl text-center flex-col bg-background justify-center items-center border border-content3 gap-3 shadow cursor-pointer"
-      >
+      <UploadDropZone className="flex w-full h-60 rounded-2xl text-center flex-col bg-background justify-center items-center border border-foreground/20 gap-3 shadow cursor-pointer">
         <UploadButton
           className={cn(
             "flex flex-col items-center gap-3 absolute inset-0 justify-center",
-            (fileList.length > 0 && "opacity-25"),
-            (fileList.length >= 4 && "pointer-events-none opacity-25")
+            fileList.length > 0 && "opacity-25",
+            fileList.length >= 4 && "pointer-events-none opacity-25"
           )}
         >
           <CameraIcon className="h-12 w-12 text-foreground" />

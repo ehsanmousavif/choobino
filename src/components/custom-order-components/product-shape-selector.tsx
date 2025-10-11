@@ -11,16 +11,19 @@ export default function ProductTemplateSelector() {
           value="square"
           className="w-14 h-14 rounded-2xl"
         />
+
         <ProductTemplateSelectorItem
           title="دایره ای"
           value="circle"
           className="w-14 h-14 rounded-full"
         />
+
         <ProductTemplateSelectorItem
           title="افقی"
           value="horizontal"
           className="w-28 h-14 rounded-2xl"
         />
+        
         <ProductTemplateSelectorItem
           title="عمودی"
           value="vertical"

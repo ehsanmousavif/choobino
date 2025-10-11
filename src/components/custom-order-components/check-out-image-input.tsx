@@ -10,7 +10,7 @@ interface PreviewFile {
   file: File;
 }
 
-export default function CheckOutImageUploader() {
+export default function CheckOutImageInput() {
   const [fileList, setFileList] = useState<PreviewFile[]>([]);
 
   return (

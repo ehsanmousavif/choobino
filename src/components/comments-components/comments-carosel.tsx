@@ -17,11 +17,11 @@ interface CommentsCaroselProps {
   className?: string;
 }
 
-const CommentsCarosel: React.FC<CommentsCaroselProps> = ({
+export default function CommentsCarosel({
   direction,
   className,
   comments,
-}) => {
+}: CommentsCaroselProps ) {
   const containerRef = useRef<HTMLDivElement>(null);
   const scrollerRef = useRef<HTMLDivElement>(null);
 
@@ -90,6 +90,4 @@ const CommentsCarosel: React.FC<CommentsCaroselProps> = ({
       </div>
     </div>
   );
-};
-
-export default CommentsCarosel;
+}

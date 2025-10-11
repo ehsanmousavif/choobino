@@ -1,4 +1,5 @@
 "use client";
+
 import { Select, SelectItem } from "@heroui/select";
 
 const sizeOptions = [
@@ -7,7 +8,7 @@ const sizeOptions = [
   { id: "large", label: "بزرگ 296,000" },
 ];
 
-const OptionsSelectorSize = () => {
+export default function OptionsSelectorSize() {
   return (
     <div className="flex flex-col gap-5 flex-1 md:flex-1/2">
       <b className="text-lg">انتخاب ابعاد</b>
@@ -15,7 +16,7 @@ const OptionsSelectorSize = () => {
         <span>ابعاد محصول</span>
         <span className="text-content4">|</span>
         <Select
-          className="flex-1 shadow-none cursor-pointer border-none outline-none bg-none font-sans"
+          className="flex-1 shadow-none cursor-pointer border-none outline-none bg-none"
           placeholder="یک گزینه انتخاب کنید"
         >
           {sizeOptions.map((s) => (
@@ -25,6 +26,4 @@ const OptionsSelectorSize = () => {
       </div>
     </div>
   );
-};
-
-export default OptionsSelectorSize;
+}

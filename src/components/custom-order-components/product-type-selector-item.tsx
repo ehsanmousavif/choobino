@@ -1,16 +1,15 @@
-import { FC, ReactNode } from "react";
+import { ReactNode } from "react";
 
 interface ProductTypeSelectorItemProp {
   title: string;
   value: string;
   icon: ReactNode;
 }
-
-const ProductTypeSelectorItem: FC<ProductTypeSelectorItemProp> = ({
+export default function ProductTypeSelectorItem({
   icon,
   title,
   value,
-}) => {
+}: ProductTypeSelectorItemProp) {
   return (
     <>
       <label className="group flex-1 flex items-center justify-around cursor-pointer max-md:flex-col max-md:gap-4 min-w-20">
@@ -34,6 +33,4 @@ const ProductTypeSelectorItem: FC<ProductTypeSelectorItemProp> = ({
       <div className="min-w-0.5 h-7 bg-secondary-400 last:hidden"></div>
     </>
   );
-};
-
-export default ProductTypeSelectorItem;
+}

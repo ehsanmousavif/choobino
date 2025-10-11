@@ -1,18 +1,18 @@
 import { cn } from "@heroui/theme";
-import { type FC, memo } from "react";
+import { memo } from "react";
 
 interface NecklaceIconProp {
   color: string;
   size: string;
   className?: string;
 }
-const NecklaceIcon: FC<NecklaceIconProp> = ({ size, color , className }) => {
+
+function NecklaceIcon({ size, color, className }: NecklaceIconProp) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       className={cn(`text-${color} transition duration-300 ${size}`, className)}
-      
     >
       <path
         fill="currentColor"
@@ -20,6 +20,6 @@ const NecklaceIcon: FC<NecklaceIconProp> = ({ size, color , className }) => {
       ></path>
     </svg>
   );
-};
+}
 
 export default memo(NecklaceIcon);

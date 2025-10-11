@@ -74,10 +74,9 @@ const comments = [
     profileUrl: "/images/user1.jpg",
     identity: "تلگرام",
   },
-  
 ];
 
-const Comments = () => {
+export default function Comments() {
   return (
     <section className="flex flex-col py-32 gap-28">
       <CommentsHeader />
@@ -97,6 +96,4 @@ const Comments = () => {
       </div>
     </section>
   );
-};
-
-export default Comments;
+}

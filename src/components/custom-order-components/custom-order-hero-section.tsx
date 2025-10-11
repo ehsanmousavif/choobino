@@ -1,4 +1,5 @@
 "use client";
+
 import { Button } from "@heroui/react";
 import Image from "next/image";
 import NecklaceIcon from "../icons/necklace-icon";

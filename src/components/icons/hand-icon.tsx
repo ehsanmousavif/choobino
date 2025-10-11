@@ -1,12 +1,13 @@
 import { cn } from "@heroui/theme";
-import { type FC, memo } from "react";
+import { memo } from "react";
 
 interface HandIconProp {
   size: string;
   color?: string;
   className?: string;
 }
-const HandIcon: FC<HandIconProp> = ({ size, color, className }) => {
+
+function HandIcon({ size, color, className }: HandIconProp) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -19,7 +20,6 @@ const HandIcon: FC<HandIconProp> = ({ size, color, className }) => {
       ></path>
     </svg>
   );
-};
+}
 
 export default memo(HandIcon);
-  

@@ -12,7 +12,7 @@ import Link from "next/link";
 import TelegramIcon from "../icons/telegram-icon";
 import IntagramIcon from "../icons/instagram-icon";
 
-const Footer = () => {
+export default function Footer() {
   return (
     <footer className="w-full flex flex-col">
       <div className="relative h-80 w-full">
@@ -164,6 +164,4 @@ const Footer = () => {
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

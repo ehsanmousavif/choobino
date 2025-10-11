@@ -1,12 +1,13 @@
 import { cn } from "@heroui/theme";
-import { FC, memo } from "react";
+import { memo } from "react";
 
 interface CarIconProp {
   size: string;
   color: string;
   className?: string;
 }
-const CarIcon: FC<CarIconProp> = ({ size, color, className }) => {
+
+function CarIcon({ size, color, className }: CarIconProp) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -35,6 +36,6 @@ const CarIcon: FC<CarIconProp> = ({ size, color, className }) => {
       </g>
     </svg>
   );
-};
+}
 
 export default memo(CarIcon);

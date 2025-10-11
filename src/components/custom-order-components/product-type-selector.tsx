@@ -15,7 +15,6 @@ const ProductTypeSelectorItems: ProductTypeSelectorItemType[] = [
   {
     title: "دستبند",
     value: "bracelet",
-
     icon: (
       <HandIcon
         size={"size-6 lg:size-10 md:size-12"}
@@ -24,10 +23,10 @@ const ProductTypeSelectorItems: ProductTypeSelectorItemType[] = [
       />
     ),
   },
+
   {
     title: "گردنبند",
     value: "necklace",
-
     icon: (
       <NecklaceIcon
         size={"size-6 lg:size-10 md:size-12"}
@@ -36,10 +35,10 @@ const ProductTypeSelectorItems: ProductTypeSelectorItemType[] = [
       />
     ),
   },
+
   {
     title: "جاسویچی",
     value: "key",
-
     icon: (
       <KeyIcon
         size={"size-6 lg:size-10 md:size-12"}
@@ -48,10 +47,10 @@ const ProductTypeSelectorItems: ProductTypeSelectorItemType[] = [
       />
     ),
   },
+
   {
     title: "آویزخودرو",
     value: "car",
-
     icon: (
       <CarIcon
         size={"size-6 lg:size-10 md:size-12"}

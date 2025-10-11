@@ -1,11 +1,11 @@
-import { type FC, memo } from "react";
+import { memo } from "react";
 
 interface InstagramIconProps {
   size: number;
   color: string;
 }
 
-const IntagramIcon: FC<InstagramIconProps> = ({ size, color }) => {
+function IntagramIcon({ size, color }: InstagramIconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -20,6 +20,6 @@ const IntagramIcon: FC<InstagramIconProps> = ({ size, color }) => {
       ></path>
     </svg>
   );
-};
+}
 
 export default memo(IntagramIcon);

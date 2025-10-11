@@ -2,7 +2,6 @@
 
 import { CheckIcon } from "@heroicons/react/24/outline";
 import { cn } from "@heroui/theme";
-import { FC } from "react";
 
 interface ProductTemplateSelectorItemProp {
   title: string;
@@ -10,11 +9,11 @@ interface ProductTemplateSelectorItemProp {
   className: string;
 }
 
-const ProductTemplateSelectorItem: FC<ProductTemplateSelectorItemProp> = ({
+export default function ProductTemplateSelectorItem({
   title,
   value,
   className,
-}) => {
+}: ProductTemplateSelectorItemProp) {
   return (
     <label className="group flex flex-col items-center gap-3 cursor-pointer">
       <input
@@ -35,6 +34,4 @@ const ProductTemplateSelectorItem: FC<ProductTemplateSelectorItemProp> = ({
       <b>{title}</b>
     </label>
   );
-};
-
-export default ProductTemplateSelectorItem;
+}

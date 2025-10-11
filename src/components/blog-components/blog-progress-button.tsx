@@ -1,8 +1,8 @@
 import React, { ComponentPropsWithRef } from "react";
 
-type PropType = ComponentPropsWithRef<"button">;
+type BlogProgressButtonProp = ComponentPropsWithRef<"button">;
 
-const BlogProgressButton: React.FC<PropType> = (props) => {
+export default function BlogProgressButton(props: BlogProgressButtonProp) {
   const { children, className, ...restProps } = props;
 
   return (
@@ -10,6 +10,4 @@ const BlogProgressButton: React.FC<PropType> = (props) => {
       {children}
     </button>
   );
-};
-
-export default BlogProgressButton;
+}

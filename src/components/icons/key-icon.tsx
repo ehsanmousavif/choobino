@@ -1,13 +1,13 @@
 import { cn } from "@heroui/theme";
-import { type FC, memo } from "react";
+import { memo } from "react";
 
-interface keyIconProp {
+interface KeyIconProp {
   color: string;
   size: string;
   className?: string;
 }
 
-const KeyIcon: FC<keyIconProp> = ({ size, color, className }) => {
+function KeyIcon({ size, color, className }: KeyIconProp) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -20,6 +20,6 @@ const KeyIcon: FC<keyIconProp> = ({ size, color, className }) => {
       ></path>
     </svg>
   );
-};
+}
 
 export default memo(KeyIcon);
