@@ -1,12 +1,13 @@
+"use client";
 import Banner from "@/components/banner";
 import Benefits from "@/components/benefits";
+import { Benefits } from "@/components/benefits";
 
 export default function Home() {
   return (
-    <section className="w-full flex flex-col">
+    <section className="w-full flex flex-col relative">
       <Banner />
-      <div className="hidden md:block w-full pt-6">
-        {" "}
+      <div className="hidden md:block">
         <Benefits />
       </div>
     </section>
