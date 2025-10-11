@@ -7,6 +7,7 @@ import Header from "@/components/layout/header";
 import { fontMono, fontSans } from "@/config/fonts";
 
 import "@/styles/globals.css";
+import Footer from "@/components/layout/footer";
 
 export const metadata: Metadata = {
   title: {
@@ -36,7 +37,7 @@ export default function RootLayout({
       <head />
       <body
         className={cn(
-          "md:px-8 min-h-screen antialiased bg-background font-sans",
+          "min-h-screen antialiased bg-background font-sans px-0",
           fontSans.variable,
           fontMono.variable
         )}
@@ -47,10 +48,13 @@ export default function RootLayout({
             forcedTheme: "light",
           }}
         >
-          <div className="relative flex flex-col h-screen container mx-auto px-6">
+          <div className="relative flex flex-col h-screen containersw-full">
             <Header />
 
-            <main className="flex-grow">{children}</main>
+            <main className="flex-grow px-16">{children}</main>
+            <div className="w-full">
+              <Footer/>
+            </div>
           </div>
         </Providers>
       </body>
