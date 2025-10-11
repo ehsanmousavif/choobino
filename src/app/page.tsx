@@ -1,13 +1,14 @@
+"use client";
 import Banner from "@/components/banner";
 import Blogs from "@/components/Blogs";
 import Comments from "@/components/comments-components/comments";
+import TopSales from "@/components/top-sales";
 
 export default function Home() {
   return (
-    <section className="w-full flex flex-col font-sans">
+    <section className="w-full flex flex-col relative">
       <Banner />
-      <Blogs />
-      <Comments/>
+      <TopSales />
     </section>
   );
 }

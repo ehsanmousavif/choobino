@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import React from "react";
-import { Button, Input, Skeleton } from "@heroui/react";
+import { Button, Input, Navbar, Skeleton } from "@heroui/react";
 import {
   FingerPrintIcon,
   ShoppingBagIcon,
@@ -17,6 +17,33 @@ const MobileDrawer = dynamic(() => import("./drawer"), {
   ssr: false,
   loading: () => <Skeleton className="size-12 rounded-full" />,
 });
+
+const navbar = [
+  {
+    label: "چوبینو!",
+    href: "/",
+  },
+  {
+    label: "فروشگاه",
+    href: "/shop",
+  },
+  {
+    label: "محصولات",
+    href: "/product",
+  },
+  {
+    label: "وبلاگ",
+    href: "/blog",
+  },
+  {
+    label: "درباره ما",
+    href: "/about",
+  },
+  {
+    label: "ارتباط باما",
+    href: "/call",
+  },
+];
 
 export default function Header() {
   return (
@@ -73,28 +100,17 @@ export default function Header() {
           </Button>
         </div>
       </div>
+      <div className="flex items-center gap-6 text-sm pt-6 ">
+        {navbar.map((x) => {
+          return (
+            <ul>
+              <Link href={x.href}>
+                <li>{x.label}</li>
+              </Link>
+            </ul>
+          );
+        })}
+      </div>
     </header>
   );
-}
-
-{
-  /* 
-      <div className="w-full">
-        <ul className=" hidden md:flex flex-row-reverse justify-center items-center gap-10 mt-6 text-[12px] ">
-          {siteConfig.navMenuItems.map((item, index) => (
-            <li
-              key={index}
-              className={`${
-                item.href === "/" && removeSlash === ""
-                  ? "text-default-50"
-                  : item.href === `/${removeSlash}`
-                    ? "text-default-50"
-                    : "text-default-600"
-              }`}
-            >
-              <Link href={item.href}>{item.label}</Link>
-            </li>
-          ))}
-        </ul>
-      </div> */
 }
