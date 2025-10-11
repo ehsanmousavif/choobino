@@ -1,3 +1,17 @@
 @import "tailwindcss";
-
 @config "../../tailwind.config.js";
+
+@theme comments-carosel {
+  @keyframes carouselAnimation {
+    100% {
+      transform: translateX(var(--scroll-amount));
+    }
+  }
+}
+.comments-carosel {
+  animation: carouselAnimation 100s linear infinite;
+}
+.comments-carosel-container:hover .comments-carosel {
+  animation-play-state: paused;
+  cursor: pointer;
+}
