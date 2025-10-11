@@ -1,5 +1,6 @@
 "use client";
 import Banner from "@/components/banner";
+import Benefits from "@/components/benefits";
 import { Benefits } from "@/components/benefits";
 
 export default function Home() {
