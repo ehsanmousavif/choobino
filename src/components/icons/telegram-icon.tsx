@@ -5,7 +5,7 @@ interface TelegramIconProps {
   color: string;
 }
 
-const TelegramIcon: React.FC<TelegramIconProps> = ({size, color}) => {
+function TelegramIcon({ size, color }: TelegramIconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -23,6 +23,6 @@ const TelegramIcon: React.FC<TelegramIconProps> = ({size, color}) => {
       </g>
     </svg>
   );
-};
+}
 
 export default React.memo(TelegramIcon);

@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const CommentsHeader = () => {
+export default function CommentsHeader(){
   return (
     <div className="flex justify-center max-md:text-center md:justify-between md:pr-28">
       <div className="flex flex-col gap-5 max-md:items-center">
@@ -23,4 +23,3 @@ const CommentsHeader = () => {
   );
 };
 
-export default CommentsHeader;

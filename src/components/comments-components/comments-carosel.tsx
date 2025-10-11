@@ -17,15 +17,15 @@ interface CommentsCaroselProps {
   className?: string;
 }
 
-const CommentsCarosel: React.FC<CommentsCaroselProps> = ({
+export default function CommentsCarosel({
   direction,
   className,
   comments,
-}) => {
+}: CommentsCaroselProps ) {
   const containerRef = useRef<HTMLDivElement>(null);
   const scrollerRef = useRef<HTMLDivElement>(null);
 
-  async function addAnimation() {
+  function addAnimation() {
     if (scrollerRef.current && containerRef.current) {
       const items = Array.from(scrollerRef.current.children);
       items.forEach((i) => {
@@ -90,6 +90,4 @@ const CommentsCarosel: React.FC<CommentsCaroselProps> = ({
       </div>
     </div>
   );
-};
-
-export default CommentsCarosel;
+}

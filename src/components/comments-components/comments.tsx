@@ -1,6 +1,6 @@
 import Image from "next/image";
-import CommentsCarosel from "./CommentsCarosel";
-import CommentsHeader from "./CommentsHeader";
+import CommentsCarosel from "./comments-carosel";
+import CommentsHeader from "./comments-header";
 
 const comments = [
   {
@@ -76,13 +76,14 @@ const comments = [
   },
 ];
 
-const Comments = () => {
+export default function Comments() {
   return (
     <section className="flex flex-col py-32 gap-28">
       <CommentsHeader />
       <div className="flex flex-col">
         <CommentsCarosel comments={comments} direction="right" />
         <CommentsCarosel comments={comments} direction="left" />
+
         <div className="flex justify-end">
           <Image
             src={"/images/635fd0a699c1c847bf2834e084409a65e49ab8b1.png"}
@@ -95,6 +96,4 @@ const Comments = () => {
       </div>
     </section>
   );
-};
-
-export default Comments;
+}
