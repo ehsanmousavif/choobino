@@ -9,7 +9,7 @@ import ProductTemplateSelector from "@/components/custom-order-components/produc
 
 const CustomOrderPage = () => {
   return (
-    <div className="flex flex-col font-sans container mx-auto">
+    <div className="flex flex-col font-sans container mx-auto overflow-hidden">
       <CustomOrderHeroSection />
       <ProductTypeSelector />
       <OptionsSelector />
