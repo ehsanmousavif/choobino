@@ -1,11 +1,10 @@
 "use client";
 import Image from "next/image";
-import CustomProductName, { CustomProductTypes } from "./custom-product-name";
 import { Button } from "@heroui/button";
 import useEmblaCarousel from "embla-carousel-react";
 import { cn } from "@heroui/theme";
-import { useBlogProgressButton } from "./use-blog-progress-button";
-import { use, useState } from "react";
+import { useProgressButton } from "../use-progress-button";
+import CustomProductName, { CustomProductTypes } from "./custom-product-name";
 
 export function CustomProduct() {
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -19,7 +18,7 @@ export function CustomProduct() {
       "(max-width: 1279px)": { active: true },
     },
   });
-  const { selectedIndex } = useBlogProgressButton(emblaApi);
+  const { selectedIndex } = useProgressButton(emblaApi);
 
   const CustomProductData: CustomProductTypes[] = [
     {
@@ -61,7 +60,7 @@ export function CustomProduct() {
       </div>
 
       <div className="relative z-20 flex flex-col items-center py-20 md:py-28 px-6 md:px-24 xl:px-64 gap-16">
-        <div className="w-full flex flex-col items-center md:items-start justify-start text-center md:text-right gap-2 font-medium">
+        <div className="w-full flex flex-col items-center md:items-start text-center md:text-right gap-2 font-medium">
           <span className="text-sm text-background/60">
             رویایتان را به محصولی واقعی تبدیل می‌کنیم.
           </span>
@@ -74,17 +73,17 @@ export function CustomProduct() {
 
         <div className="w-full overflow-hidden" ref={emblaRef}>
           <div className={cn("flex gap-6 sm:gap-8 md:grid  xl:grid-cols-3")}>
+            {" "}
             {CustomProductData.map((product, idx) => (
               <div
                 key={idx}
-                className="w-full flex-[0_0_100%] md:flex-[0_0_50%] xl:flex-[0_0_40%]"
+                className="flex-[0_0_100%] sm:flex-[0_0_70%] md:flex-[0_0_50%] xl:flex-[0_0_40%]"
               >
                 <CustomProductName {...product} />
               </div>
             ))}
-
-            <div className="flex-[0_0_100%] bg-white text-black p-6 rounded-2xl flex flex-col justify-between gap-4 shadow-xl">
-              <h3 className="font-bold text-lg">ایده‌ی شما اینجا نوشته میشه</h3>
+            <div className="bg-white text-black p-4 rounded-2xl flex flex-col justify-between gap-2 shadow-xl flex-[0_0_100%] sm:flex-[0_0_70%] md:flex-[0_0_50%] xl:flex-[0_0_40%]">
+              <h3 className="font-bold text-md">ایده‌ی شما اینجا نوشته میشه</h3>
               <p className="text-sm text-foreground/40">Business Plan</p>
               <p className="text-sm leading-relaxed text-foreground/40">
                 برای سفارش اختصاصی، کافیست ایده‌تان را با ما در میان بگذارید.
@@ -100,7 +99,7 @@ export function CustomProduct() {
         <div className="w-full flex items-center justify-center mt-6 md:hidden">
           <div className="w-full max-w-sm px-4">
             <div className="flex gap-2 h-2">
-              {[0, 1, 2].map((i) => {
+              {CustomProductData.map((_, i) => {
                 const active = selectedIndex === i;
                 return (
                   <button
@@ -118,7 +117,6 @@ export function CustomProduct() {
           </div>
         </div>
 
-        {/* --- متن توضیح پایین --- */}
         <div>
           <p className="text-4xl">“</p>
           <p className="text-right text-sm text-white/70 leading-relaxed">

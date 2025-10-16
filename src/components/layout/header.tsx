@@ -15,7 +15,7 @@ import dynamic from "next/dynamic";
 
 const MobileDrawer = dynamic(() => import("./drawer"), {
   ssr: false,
-  loading: () => <Skeleton className="size-12 rounded-full" />,
+  loading: () => <Skeleton className="w-12 h-12 rounded-full" />,
 });
 
 const navbar = [
@@ -50,12 +50,12 @@ export default function Header() {
     <header className="w-full flex flex-col items-center justify-between py-6 px-2 md:pt-12">
       <div className="w-full flex items-center justify-between py-2">
         <div className="flex items-center max-w-md">
-          <MobileDrawer className="md:hidden" />
+          <MobileDrawer className=" md:hidden" />
 
           <Input
             placeholder="دنبال محصول خاصی میگردی؟"
             variant="underlined"
-            startContent={<MagnifyingGlassIcon className="size-5" />}
+            startContent={<MagnifyingGlassIcon className="w-5 h-5" />}
             className="hidden md:flex"
             classNames={{
               input: "placeholder:text-foreground",
@@ -82,7 +82,7 @@ export default function Header() {
             as={Link}
             href="/login"
           >
-            <ShoppingBagIcon className="size-5" />
+            <ShoppingBagIcon className="w-5 h-5" />
 
             <span className="sr-only">فروشگاه</span>
           </Button>
@@ -93,14 +93,14 @@ export default function Header() {
             as={Link}
             href="/login"
             size="sm"
-            endContent={<FingerPrintIcon className="size-5" />}
+            endContent={<FingerPrintIcon className="w-5 h-5" />}
           >
             وارد شوید
             <span className="sr-only">وارد شوید</span>
           </Button>
         </div>
       </div>
-      <div className="flex items-center gap-6 text-sm pt-6 ">
+      <div className="items-center gap-6 text-sm pt-6 hidden md:flex  ">
         {navbar.map((x) => {
           return (
             <ul>

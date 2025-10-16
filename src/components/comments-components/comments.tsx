@@ -78,17 +78,16 @@ const comments = [
 
 export default function Comments() {
   return (
-    <section className="flex flex-col py-32 gap-28">
+    <section className="flex flex-col gap-28">
       <CommentsHeader />
       <div className="flex flex-col">
         <CommentsCarosel comments={comments} direction="right" />
         <CommentsCarosel comments={comments} direction="left" />
 
-        <div className="flex justify-end">
+        <div className="flex justify-end w-36 h-36 relative">
           <Image
             src={"/images/635fd0a699c1c847bf2834e084409a65e49ab8b1.png"}
-            height={232}
-            width={232}
+            fill
             alt="comments image"
             className="object-cover -rotate-15 grayscale max-md:hidden"
           />

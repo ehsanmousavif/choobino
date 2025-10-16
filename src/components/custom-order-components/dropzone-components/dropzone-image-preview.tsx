@@ -35,7 +35,7 @@ export default function DropzoneImagePreview({
         onClick={() => onRemove(id)}
         className="bg-danger-700 flex items-center justify-center rounded-full w-7 h-7 cursor-pointer text-background z-20 absolute -right-3.5 -top-3.5"
       >
-        <XMarkIcon className="size-6" />
+        <XMarkIcon className="w-6 h-6" />
       </button>
     </div>
   );

@@ -3,8 +3,7 @@
 import { Button } from "@heroui/react";
 import useEmblaCarousel from "embla-carousel-react";
 import { useBlogProgressButton } from "@/app/hooks/useBlogProgressButton";
-import BlogProgressButton from "./blog-components/blog-progress-button";
-import BlogCard from "./blog-components/blog-card";
+import BlogCard from "./blog-card";
 
 export interface BlogType {
   title: string;
@@ -61,7 +60,6 @@ const blogs: BlogType[] = [
 
 const blogsWithNumber = blogs.map((b, i) => ({ ...b, number: i + 1 }));
 
-
 const Blogs = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     containScroll: "trimSnaps",
@@ -69,21 +67,18 @@ const Blogs = () => {
     slidesToScroll: "auto",
     loop: true,
     breakpoints: {
-      "(max-width: 767px)": {
-        align: "center",
-      },
-      "(min-width: 768px)": {
-        align: "start",
-      },
+      "(max-width: 767px)": { align: "center" },
+      "(min-width: 768px)": { align: "start" },
     },
   });
 
   const { selectedIndex, scrollSnaps } = useBlogProgressButton(emblaApi);
 
   return (
-    <section className="rounded-3xl w-full flex flex-col relative gap-12 my-60">
+    <section className="rounded-3xl w-full flex flex-col relative gap-12">
+      {/* Header */}
       <div className="w-full flex justify-between h-18 items-center">
-        <h2 className="text-2xl max-md:m-auto md:text-4xl">مقالات اخیر</h2>
+        <h2 className="text-xl max-md:m-auto md:text-2xl">مقالات اخیر</h2>
         <Button
           variant="bordered"
           className="w-auto bg-foreground text-background py-6 px-2 md:px-6 max-md:hidden lg:px-8"
@@ -92,6 +87,7 @@ const Blogs = () => {
         </Button>
       </div>
 
+      {/* Carousel */}
       <div className="overflow-hidden" ref={emblaRef}>
         <div className="flex">
           {blogsWithNumber.map((blog) => (
@@ -100,17 +96,19 @@ const Blogs = () => {
         </div>
       </div>
 
-      <div className="flex flex-wrap justify-center gap-2 items-center mx-auto w-full">
+      {/* Progress Buttons */}
+      <div className="flex justify-center gap-2 items-center mx-auto w-full">
         {scrollSnaps.map((_, i) => (
-          <BlogProgressButton
+          <div
             key={i}
-            className={`flex-1 h-0.5 transition-background md:hidden ${
-              i === selectedIndex ? "bg-[#B7B7B7]" : "bg-[#F5F5F5]"
+            className={`flex-1 h-0.5 transition-colors md:hidden ${
+              i === selectedIndex ? "bg-foreground-400" : "bg-foreground-200"
             }`}
           />
         ))}
       </div>
 
+      {/* Mobile Button */}
       <Button
         variant="bordered"
         className="w-1/2 mx-auto bg-foreground text-background py-6 px-2 md:px-6 md:hidden lg:px-8"
