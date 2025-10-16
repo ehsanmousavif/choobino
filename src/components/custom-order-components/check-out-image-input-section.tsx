@@ -3,7 +3,7 @@ import CheckOutImageInput from "./check-out-image-input";
 export default function CheckOutImageInputSection() {
   return (
     <section className="py-15 gap-8 flex flex-col">
-      <div className="flex flex-col gap-2.5">
+      <div className="flex flex-col gap-3">
         <b className="text-lg">آپلود تصویر نمونه </b>
         <span className="text-foreground/45">
           اگر تصویر نمونه ای دارید برامون بفرستید :)

@@ -9,7 +9,7 @@ import HandIcon from "../icons/hand-icon";
 
 const CustomOrderHeroSection = () => {
   return (
-    <section className="w-full h-[80vh] relative flex flex-col justify-center mb-40 overflow-hidden">
+    <section className="w-full h-[80vh] relative flex flex-col justify-center items-center mb-40 overflow-hidden">
       <div className="relative flex flex-col justify-around h-200 w-200">
         <div className="absolute w-full flex items-center justify-center -bottom-30 md:-bottom-25 ">
           <div className="absolute border-secondary-500/20  border-solid border-2 w-136 h-136 md:w-200 md:h-200 rounded-full"></div>

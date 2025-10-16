@@ -17,7 +17,7 @@ const ProductTypeSelectorItems: ProductTypeSelectorItemType[] = [
     value: "bracelet",
     icon: (
       <HandIcon
-        size={"size-6 lg:size-10 md:size-12"}
+        size={"w-6 h-6 lg:w-10 lg:h-10 md:w-12 md:h-12"}
         color="secondary-400"
         className=" group-has-[:checked]:text-background"
       />
@@ -29,7 +29,7 @@ const ProductTypeSelectorItems: ProductTypeSelectorItemType[] = [
     value: "necklace",
     icon: (
       <NecklaceIcon
-        size={"size-6 lg:size-10 md:size-12"}
+        size={"w-6 h-6 lg:w-10 lg:h-10 md:w-12 md:h-12"}
         color="secondary-400"
         className=" group-has-[:checked]:text-background"
       />
@@ -41,7 +41,7 @@ const ProductTypeSelectorItems: ProductTypeSelectorItemType[] = [
     value: "key",
     icon: (
       <KeyIcon
-        size={"size-6 lg:size-10 md:size-12"}
+        size={"w-6 h-6 lg:w-10 lg:h-10 md:w-12 md:h-12"}
         color="secondary-400"
         className=" group-has-[:checked]:text-background"
       />
@@ -53,25 +53,20 @@ const ProductTypeSelectorItems: ProductTypeSelectorItemType[] = [
     value: "car",
     icon: (
       <CarIcon
-        size={"size-6 lg:size-10 md:size-12"}
+        size={"w-6 h-6 lg:w-10 lg:h-10 md:w-12 md:h-12"}
         color="secondary-400"
         className=" group-has-[:checked]:text-background"
       />
     ),
   },
-
 ];
 
 export default function ProductTypeSelector() {
   return (
-    <div className="flex flex-col gap-10">
-      <Image
-        src={"/images/star.svg"}
-        height={50}
-        width={50}
-        alt="star"
-        className="mb-20"
-      />
+    <div className="flex flex-col gap-10 relative">
+      <div className="relative w-12 h-12">
+        <Image src={"/images/star.svg"} fill alt="star" className="mb-20" />
+      </div>
 
       <div className="flex flex-col gap-5">
         <b className="text-lg">انتخاب نوع محصول</b>

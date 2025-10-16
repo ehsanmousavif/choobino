@@ -10,7 +10,7 @@ import ProductTemplateSelector from "@/components/custom-order-components/produc
 const CustomOrderPage = () => {
   return (
     <div className="flex flex-col font-sans container mx-auto">
-      {/* <CustomOrderHeroSection />   */}
+      <CustomOrderHeroSection />
       <ProductTypeSelector />
       <OptionsSelector />
       <ProductTemplateSelector />
