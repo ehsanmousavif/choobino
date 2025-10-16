@@ -1,12 +1,13 @@
 "use client";
 
 import { useState } from "react";
+import LeaftIcon from "../icons/leaft-icon";
 
 export default function CheckOutDescription() {
   const [checkOutDescriptionValue, setCheckOutDescriptionValue] =
     useState<string>("");
   return (
-    <div className="flex flex-col gap-8">
+    <div className="relative flex flex-col gap-8">
       <b className="text-lg">توضیحات تکمیلی </b>
 
       <label className="flex w-full h-60 rounded-2xl border-content3 border-solid border-1 gap-2 md:gap-5 p-8 shadow max-md:flex-col">
@@ -20,6 +21,8 @@ export default function CheckOutDescription() {
           onChange={(e) => setCheckOutDescriptionValue(e.target.value)}
         ></textarea>
       </label>
+
+      <LeaftIcon className="top-1/3 -translate-y-1/2 rotate-67 -right-15" />
     </div>
   );
 }
