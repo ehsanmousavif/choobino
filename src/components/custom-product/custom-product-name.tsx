@@ -15,22 +15,24 @@ export default function CustomProductName({
   nameEn,
 }: CustomProductTypes) {
   return (
-    <div className="flex flex-col items-start justify-center w-full backdrop-blur-sm border-background/10 border-2 border-solid rounded-xl gap-10 p-8">
-      <div className="size-16 relative z-10 rounded-xl">
+    <div className="flex flex-col items-start justify-center w-full backdrop-blur-sm border-background/10 border-2 rounded-xl gap-10 p-8">
+      <div className="w-16 h-16 relative z-10 rounded-full overflow-hidden">
         <Image
           src={image}
           alt="image preview"
           fill
-          className="object-cover rounded-t-full object-center rounded-full"
+          className="object-cover object-center"
         />
       </div>
+
       <div className="flex flex-col gap-1">
         <span className="text-sm md:text-md font-medium">{nameFa}</span>
         <span className="text-sm font-medium text-background/40">{nameEn}</span>
       </div>
+
       <div className="w-full flex items-center justify-between text-sm">
-        <Link href="/#"></Link>
-        <ChevronDownIcon className="size-4" />
+        <Link href="/#">مشاهده تمامی محصولات</Link>
+        <ChevronDownIcon className="w-4 h-4" />
       </div>
     </div>
   );

@@ -76,7 +76,7 @@ export default function DragDropAndPreview({
 
           {fileList.length > 0 && fileList.length < 4 && (
             <UploadButton className="w-32 h-32 rounded-lg text-foreground/30 border-dotted border-3 border-foreground/30 flex items-center justify-center max-md:hidden">
-              <PlusIcon className="size-14" />
+              <PlusIcon className="w-14 h-14" />
             </UploadButton>
           )}
         </div>
