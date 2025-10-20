@@ -73,7 +73,7 @@ export default function CheckoutSection({
         </div>
       </div>
 
-      <LeaftIcon className="top-1/2 translate-y-1/2 rotate-150 -left-20" />
+      <LeaftIcon className="top-1/2 translate-y-1/2 rotate-150 -left-20 " />
     </section>
   );
 }

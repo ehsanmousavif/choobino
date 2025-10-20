@@ -1,10 +1,12 @@
 import Image from "next/image";
-import HandIcon from "../icons/hand-icon";
+import { ReactNode } from "react";
+
+import ProductTypeSelectorItem from "./product-type-selector-item";
 import NecklaceIcon from "../icons/necklace-icon";
+import HandIcon from "../icons/hand-icon";
 import KeyIcon from "../icons/key-icon";
 import CarIcon from "../icons/car-icon";
-import ProductTypeSelectorItem from "./product-type-selector-item";
-import { ReactNode } from "react";
+
 interface ProductTypeSelectorItemType {
   title: string;
   value: string;
@@ -18,7 +20,7 @@ const ProductTypeSelectorItems: ProductTypeSelectorItemType[] = [
     icon: (
       <HandIcon
         size={"size-6 lg:size-10 md:size-12"}
-        color="secondary-400"
+        color="secondary-600"
         className=" group-has-[:checked]:text-background"
       />
     ),
@@ -30,7 +32,7 @@ const ProductTypeSelectorItems: ProductTypeSelectorItemType[] = [
     icon: (
       <NecklaceIcon
         size={"size-6 lg:size-10 md:size-12"}
-        color="secondary-400"
+        color="secondary-600"
         className=" group-has-[:checked]:text-background"
       />
     ),
@@ -42,7 +44,7 @@ const ProductTypeSelectorItems: ProductTypeSelectorItemType[] = [
     icon: (
       <KeyIcon
         size={"size-6 lg:size-10 md:size-12"}
-        color="secondary-400"
+        color="secondary-600"
         className=" group-has-[:checked]:text-background"
       />
     ),
@@ -54,12 +56,11 @@ const ProductTypeSelectorItems: ProductTypeSelectorItemType[] = [
     icon: (
       <CarIcon
         size={"size-6 lg:size-10 md:size-12"}
-        color="secondary-400"
+        color="secondary-600"
         className=" group-has-[:checked]:text-background"
       />
     ),
   },
-
 ];
 
 export default function ProductTypeSelector() {

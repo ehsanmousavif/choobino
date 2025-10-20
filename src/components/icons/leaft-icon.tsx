@@ -1,9 +1,9 @@
 "use client";
 
 import { cn } from "@heroui/theme";
-import Image from "next/image";
 import { useRef } from "react";
-import { motion, useScroll, useSpring, useTransform } from "framer-motion";
+import { motion, useScroll, useSpring } from "framer-motion";
+import Image from "next/image";
 
 interface LeaftIconProp {
   className?: string;
@@ -13,8 +13,6 @@ interface LeaftIconProp {
 
 export default function LeaftIcon({
   className,
-  floatRange = 20,
-  oscillations = 20,
 }: LeaftIconProp) {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -23,13 +21,6 @@ export default function LeaftIcon({
     offset: ["start end", "end start"],
   });
 
-//   const y = useTransform(
-//     scrollYProgress,
-//     [0, 1],
-//     [0, 2 * Math.PI * oscillations]
-//   );
-
-//   const ySin = useTransform(y, (val) => Math.sin(val) * floatRange);
   const smoothY = useSpring(scrollYProgress, { stiffness: 10, damping: 10 });
 
   return (
