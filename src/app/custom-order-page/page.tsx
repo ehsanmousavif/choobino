@@ -1,4 +1,3 @@
-import CustomOrderHeroSection from "@/components/custom-order-components/custom-order-hero-section";
 import ProductTypeSelector from "@/components/custom-order-components/product-type-selector";
 import CheckOutDescription from "@/components/custom-order-components/check-out-description";
 import CheckOutImageInputSection from "@/components/custom-order-components/check-out-image-input-section";
@@ -10,7 +9,6 @@ import ProductTemplateSelector from "@/components/custom-order-components/produc
 const CustomOrderPage = () => {
   return (
     <div className="flex flex-col font-sans container mx-auto">
-      {/* <CustomOrderHeroSection />   */}
       <ProductTypeSelector />
       <OptionsSelector />
       <ProductTemplateSelector />
