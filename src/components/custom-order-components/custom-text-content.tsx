@@ -4,7 +4,7 @@ import LeaftIcon from "../icons/leaft-icon";
 export default function CustomTextContent() {
   return (
     <div className="relative flex flex-col gap-8">
-      <LeaftIcon className="-top-15 translate-y-1/2 -rotate-150 -left-20 " />
+      <LeaftIcon className="-top-15 translate-y-1/2 -rotate-150 -left-20" />
 
       <b className="text-lg">محتوای متنی</b>
 
@@ -13,6 +13,7 @@ export default function CustomTextContent() {
           <HeartIcon className="w-5 h-5 md:w-7 md:h-7" />
           <span>با عشق برای</span>
         </span>
+
         <div className="mt-2 bg-content4 w-0.5 h-6 max-md:hidden" />
         <textarea
           placeholder="اینجا حرف دلتو بنویس"

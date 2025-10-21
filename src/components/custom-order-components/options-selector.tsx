@@ -1,6 +1,6 @@
-import LeaftIcon from "../icons/leaft-icon";
 import OptionsSelectorGender from "./options-selector-gender";
 import OptionsSelectorSize from "./options-selector-size";
+import LeaftIcon from "../icons/leaft-icon";
 
 export default function OptionsSelector() {
   return (

@@ -24,7 +24,7 @@ export default function ProductTemplateSelectorItem({
       />
       <div
         className={cn(
-          "border-2 border-secondary-400 flex items-center justify-center bg-amber-50 transition-colors duration-300",
+          "border-2 border-secondary-400 flex items-center justify-center bg-secondary-50 transition-colors duration-300",
           "group-has-[:checked]:bg-secondary-400 group-has-[:checked]:text-foreground",
           className
         )}

@@ -5,6 +5,7 @@ interface ProductTypeSelectorItemProp {
   value: string;
   icon: ReactNode;
 }
+
 export default function ProductTypeSelectorItem({
   icon,
   title,
@@ -12,7 +13,7 @@ export default function ProductTypeSelectorItem({
 }: ProductTypeSelectorItemProp) {
   return (
     <>
-      <label className="group flex-1 flex items-center justify-around cursor-pointer max-md:flex-col max-md:gap-4 min-w-20">
+      <label className="group flex-1 flex items-center justify-around cursor-pointer max-md:flex-col gap-4 min-w-20">
         <input
           type="radio"
           name="productType"
@@ -21,7 +22,7 @@ export default function ProductTypeSelectorItem({
           defaultChecked
         />
 
-        <span className="flex items-center justify-center w-12 h-12 max-lg:max-w-17 max-lg:max-h-15 md:w-22 md:h-22 rounded-full transition duration-300 bg-amber-50 group-has-[:checked]:bg-secondary-400">
+        <span className="flex items-center justify-center w-12 h-12 max-lg:max-w-17 max-lg:max-h-15 md:w-22 md:h-22 rounded-full transition duration-300 bg-secondary-50 group-has-[:checked]:bg-secondary-400">
           {icon}
         </span>
 
@@ -30,7 +31,7 @@ export default function ProductTypeSelectorItem({
         </span>
       </label>
 
-      <div className="min-w-0.5 h-7 bg-secondary-400 last:hidden"></div>
+      <div className="min-w-0.5 h-7 bg-secondary-400 last:hidden"/>
     </>
   );
 }

@@ -48,9 +48,9 @@ export default function RootLayout({
             forcedTheme: "light",
           }}
         >
-          <div className="relative flex flex-col h-screen container mx-auto px-4">
+          <div className="relative flex flex-col h-screen container mx-auto">
             <Header />
-            <main className="flex-grow px-6 md:px-16">{children}</main>
+            <main className="flex-grow">{children}</main>
             <div className="w-full">
               <Footer />
             </div>

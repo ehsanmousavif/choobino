@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
-import Uploady from "@rpldy/uploady";
 import DragDropAndPreview from "./dropzone-components/drag-drop-preview";
+import Uploady from "@rpldy/uploady";
+import { useState } from "react";
 
 interface PreviewFile {
   id: string;
