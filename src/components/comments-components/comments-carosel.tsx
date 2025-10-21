@@ -21,7 +21,7 @@ export default function CommentsCarosel({
   direction,
   className,
   comments,
-}: CommentsCaroselProps ) {
+}: CommentsCaroselProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const scrollerRef = useRef<HTMLDivElement>(null);
 
@@ -64,13 +64,13 @@ export default function CommentsCarosel({
       >
         {comments.map((i, idx) => (
           <div
-            className="w-120 flex flex-col justify-between gap-4 rounded-2xl py-4 md:py-8 px-5 md:px-10 shrink-0 bg-content2"
+            className="flex flex-col justify-between gap-4 rounded-2xl py-4 md:py-8 px-5 md:px-10 shrink-0 bg-content2"
             key={idx}
           >
-            <span className="text-7xl text-danger-900">;;</span>
-            <b className="text-2xl">{i.title}</b>
-            <span className="text-lg flex-1">{i.quote}</span>
-            <span className="text-5xl text-danger-900">-</span>
+            <span className="text-4xl">;;</span>
+            <b className="text-xl">{i.title}</b>
+            <span className="text-md flex-1">{i.quote}</span>
+            <span className="text-xl text-foreground">-</span>
 
             <div className="flex items-center gap-6">
               <Image

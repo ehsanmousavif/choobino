@@ -10,7 +10,7 @@ export default function CustomTextContent() {
 
       <label className="flex w-full h-60 rounded-2xl border-content3 border-solid border-1 gap-2 md:gap-5 p-8 shadow max-md:flex-col">
         <span className="font-bold flex gap-5 pt-2 text-lg">
-          <HeartIcon className="size-5 md:size-7" />
+          <HeartIcon className="w-5 h-5 md:w-7 md:h-7" />
           <span>با عشق برای</span>
         </span>
 

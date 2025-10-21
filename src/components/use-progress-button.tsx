@@ -1,3 +1,5 @@
+"use client";
+
 import { useCallback, useEffect, useState } from "react";
 import { type EmblaCarouselType } from "embla-carousel";
 
@@ -6,7 +8,7 @@ type UseProgressButtontonType = {
   scrollSnaps: number[];
 };
 
-export const useBlogProgressButton = (
+export const useProgressButton = (
   emblaApi: EmblaCarouselType | undefined
 ): UseProgressButtontonType => {
   const [selectedIndex, setSelectedIndex] = useState(0);

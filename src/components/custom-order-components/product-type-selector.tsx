@@ -65,14 +65,10 @@ const ProductTypeSelectorItems: ProductTypeSelectorItemType[] = [
 
 export default function ProductTypeSelector() {
   return (
-    <div className="flex flex-col gap-10">
-      <Image
-        src={"/images/star.svg"}
-        height={50}
-        width={50}
-        alt="star"
-        className="mb-20"
-      />
+    <div className="flex flex-col gap-10 relative">
+      <div className="relative w-12 h-12">
+        <Image src={"/images/star.svg"} fill alt="star" className="mb-20" />
+      </div>
 
       <div className="flex flex-col gap-5">
         <b className="text-lg">انتخاب نوع محصول</b>

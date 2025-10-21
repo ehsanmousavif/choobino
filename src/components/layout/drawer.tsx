@@ -17,7 +17,7 @@ export default function MobileDrawer({ className }: { className?: string }) {
           radius="full"
           className={cn("bg-foreground/5!", className)}
         >
-          <Bars2Icon className="size-6" />
+          <Bars2Icon className="w-6 h-6" />
         </Button>
       </Drawer.Trigger>
       <Drawer.Portal>
@@ -34,12 +34,8 @@ export default function MobileDrawer({ className }: { className?: string }) {
               />
 
               <Drawer.Close asChild>
-                <Button
-                  isIconOnly
-                  variant="light"
-                  className="bg-foreground/5!"
-                >
-                  <XMarkIcon className="size-6" />
+                <Button isIconOnly variant="light" className="bg-foreground/5!">
+                  <XMarkIcon className="w-6 h-6" />
                 </Button>
               </Drawer.Close>
             </div>

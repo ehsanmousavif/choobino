@@ -35,7 +35,7 @@ export default function RootLayout({
   return (
     <html suppressHydrationWarning lang="fa-IR" dir="rtl">
       <head />
-      <body 
+      <body
         className={cn(
           "md:min-h-screen antialiased bg-background font-sans",
           fontSans.variable,
@@ -52,7 +52,7 @@ export default function RootLayout({
             <Header />
             <main className="flex-grow">{children}</main>
             <div className="w-full">
-              <Footer/>
+              <Footer />
             </div>
           </div>
         </Providers>
